@@ -72,7 +72,7 @@ class Queue
     void Enqueue(int x)
     {
       pthread_mutex_lock(&mp);
-      cout << "Enqueuing " << x << " \n";
+      cout << "Enqueuing " << x << endl;
       if (queuesize<=0) {
         cout << "Must init queue first!!!" << endl;
         pthread_mutex_unlock(&mp);
@@ -133,22 +133,22 @@ class Queue
       return A[front];
     }
 
-    void Print()
-	  {
+    void Print() {
       if (queuesize<=0) {
         cout << "Must init queue first!!!" << endl;
         return;
       }
 
-		  // Finding number of elements in queue
-		  int count = (rear+queuesize-front)%queuesize + 1;
-		  cout<<"Queue: ";
-		  for(int i = 0; i <count; i++)
-		  {
-			  int index = (front+i) % queuesize; // Index of element while travesing circularly from front
-			  cout<<A[index]<<" ";
-		  }
-		  cout<<"\n\n";
+      // Finding number of elements in queue
+      int count = (rear+queuesize-front)%queuesize + 1;
+      cout <<"Queue: ";
+		  
+      for(int i = 0; i <count; i++) {
+	int index = (front+i) % queuesize; // Index of element while travesing circularly from front
+	cout << A[index] << " ";
+      }
+		  
+      cout << endl << endl;
     }
 };
 
