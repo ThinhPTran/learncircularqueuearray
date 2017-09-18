@@ -142,12 +142,12 @@ class Queue
       // Finding number of elements in queue
       int count = (rear+queuesize-front)%queuesize + 1;
       cout <<"Queue: ";
-		  
+
       for(int i = 0; i <count; i++) {
-	int index = (front+i) % queuesize; // Index of element while travesing circularly from front
-	cout << A[index] << " ";
+        int index = (front+i) % queuesize; // Index of element while travesing circularly from front
+        cout << A[index] << " ";
       }
-		  
+
       cout << endl << endl;
     }
 };
